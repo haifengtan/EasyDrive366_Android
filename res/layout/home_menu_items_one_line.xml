@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:background="@drawable/bk2"
+    >
+
+    <TextView
+        android:id="@+id/listitem_title"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+      	android:padding="8dip"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="18sp"
+        android:textStyle="bold"
+         />
+	
+    <TextView
+        android:id="@+id/listitem_content"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:maxLines="3"
+        android:layout_toRightOf="@id/listitem_title"
+        android:layout_toLeftOf="@id/listitem_pic"
+        android:paddingLeft="5dip"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="12sp"
+         />
+    <ImageButton
+        android:id="@+id/listitem_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:padding="8dip"
+        android:contentDescription="@string/app_name"
+        android:background="@drawable/phone" 
+        />
+</RelativeLayout>

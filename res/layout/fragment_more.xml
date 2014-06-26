@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pull_refresh_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrMode="pullFromStart" >
+
+        <TableLayout
+            style="@style/table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="2" >
+
+             <TableRow
+                android:id="@+id/row_resetpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/signup_hit_input1"
+                android:gravity="center" >
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/h" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:gravity="left"
+                    android:text="重设密码" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="@string/right_arrow"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row_choose_cellphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/signup_hit_input2"
+                android:gravity="center" >
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/i" />
+
+                <TextView
+                    android:id="@+id/txt_bindCellphone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:gravity="left"
+                    android:text="绑定手机" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/img_choose_cellphone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="@string/right_arrow"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row_choose_findpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/signup_hit_input6"
+                android:gravity="center" >
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/j" />
+
+                <TextView
+                    android:id="@+id/txt_findpassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:gravity="left"
+                    android:text="找回密码" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/img_find_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="@string/right_arrow"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp" >
+            </View>
+			<TableRow
+                android:id="@+id/row_setup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/signup_hit_input0"
+                android:gravity="center" >
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:gravity="left"
+                    android:text="设置向导" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="@string/right_arrow"
+                    android:textSize="20sp" >
+                </TextView>
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp" >
+            </View>
+          
+
+            <TableRow
+                android:id="@+id/row_choose_user_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/signup_hit_input0"
+                android:gravity="center" >
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:gravity="left"
+                    android:text="用户反馈" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/txt_user_feedback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="@string/right_arrow"
+                    android:textSize="20sp" >
+                </TextView>
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp" >
+            </View>
+
+            
+            <TableRow
+                android:id="@+id/row_favorite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/signup_hit_input1"
+                android:gravity="center" >
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/c" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:gravity="left"
+                    android:text="我的收藏" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="@string/right_arrow"
+                    android:textSize="20sp" >
+                </TextView>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row_histroy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/signup_hit_input2"
+                android:gravity="center" >
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/d" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:gravity="left"
+                    android:text="浏览历史" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="@string/right_arrow"
+                    android:textSize="20sp" >
+                </TextView>
+            </TableRow>
+            <TableRow
+                android:id="@+id/row_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/signup_hit_input6"
+                android:gravity="center" >
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/b" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:gravity="left"
+                    android:text="我的卡券" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/txt_activate_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="@string/right_arrow"
+                    android:textSize="20sp" >
+                </TextView>
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp" >
+            </View>
+
+           
+
+            <TableRow
+                android:id="@+id/row_choose_check_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/signup_hit_input0"
+                android:gravity="center" >
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:gravity="left"
+                    android:text="版本号" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/txt_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="V1.01"
+                    android:textSize="16sp" >
+                </TextView>
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp" >
+            </View>
+
+            
+
+            <Button
+                android:id="@+id/btn_logout"
+                style="@style/button.red"
+                android:hint=""
+                android:text="Logout" >
+            </Button>
+        </TableLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+</LinearLayout>

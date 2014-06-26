@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TableLayout
+        android:id="@+id/tablelayout_edit_maintain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/table"
+        android:stretchColumns="*" >
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/navigation_bar_without_phone_button" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/signup_hit_input1" >
+
+            <TextView
+               style="@style/textview.right"
+               android:textSize="14sp"
+                android:text="每日平均行程：" />
+
+            <EditText
+                android:id="@+id/edt_maintain_average_mileage"
+                style="@style/edittext"
+                android:layout_width="120dp"
+                android:inputType="number"
+                android:hint="" >
+            </EditText>
+
+            <TextView
+                style="@style/textview"
+                android:text="公里" />
+        </TableRow>
+		 <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/signup_hit_input2" >
+
+            <TextView
+                style="@style/textview.right"
+                android:text="最大保养里程：" />
+
+            <EditText
+                android:id="@+id/edt_maintain_max_distance"
+                style="@style/edittext"
+                android:layout_width="120dp"
+                android:inputType="numberSigned"
+                android:hint="" >
+            </EditText>
+
+            <TextView
+                style="@style/textview"
+                android:text="公里" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/signup_hit_input2" >
+
+            <TextView
+                style="@style/textview.right"
+                android:text="最长保养间隔：" />
+
+            <EditText
+                android:id="@+id/edt_maintain_max_time"
+                style="@style/edittext"
+                android:layout_width="120dp"
+                android:inputType="numberSigned"
+                android:hint="" >
+            </EditText>
+
+            <TextView
+                style="@style/textview"
+                android:text="个月" />
+        </TableRow>
+        
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/signup_hit_input2" >
+
+            <TextView
+                style="@style/textview.right"
+                android:text="上次保养里程：" />
+
+            <EditText
+                android:id="@+id/edt_maintain_pre_distance"
+                style="@style/edittext"
+                android:layout_width="120dp"
+                android:inputType="numberSigned"
+                android:hint="" >
+            </EditText>
+
+            <TextView
+                style="@style/textview"
+                android:text="公里" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/signup_hit_input6" >
+
+            <TextView
+                style="@style/textview.right"
+                android:text="上次保养日期：" />
+
+            <TextView
+                android:id="@+id/edt_maintain_pre_date"
+                style="@style/textview"
+                android:layout_width="120dp"
+               
+                
+                 >
+            </TextView>
+
+            
+            <TextView
+                android:id="@+id/imagebutton_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                
+                android:layout_marginRight="20dp"
+                android:textSize="24sp"
+                android:text=">" />
+        </TableRow>
+
+       
+    </TableLayout>
+
+</ScrollView>

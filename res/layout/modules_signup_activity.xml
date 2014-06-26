@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/default2"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        style="@style/table"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input1"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/textview.right"
+                android:text="@string/username" />
+
+            <EditText
+                android:id="@+id/edt_signup_username"
+                style="@style/edittext"
+                android:inputType="textNoSuggestions"
+                android:hint="@string/username_hint" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:text="" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input2"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/textview.right"
+                android:text="@string/password" />
+
+            <EditText
+                android:id="@+id/edt_signup_passwrod"
+                style="@style/edittext"
+                android:layout_weight="1.0"
+                android:hint=""
+                android:inputType="textPassword" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:text="" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input2"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/textview.right"
+                android:text="@string/repassword" />
+
+            <EditText
+                android:id="@+id/edt_signup_repasswrod"
+                style="@style/edittext"
+                android:layout_weight="1.0"
+                android:inputType="textPassword" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:text="" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input6"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_signup_signup"
+                style="@style/button"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_span="3"
+                android:text="@string/Signup" />
+        </TableRow>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="用户注册"
+                android:textSize="24sp" />
+    </TableLayout>
+
+</RelativeLayout>

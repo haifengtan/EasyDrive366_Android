@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/navigation_bar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_compulsory_insurance_0"
+            style="@style/button"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_weight="1.0"
+             android:layout_margin="0dip"
+            android:padding="0dip"
+            android:text="基础费率"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btn_compulsory_insurance_1"
+            style="@style/button"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_weight="1.0"
+             android:layout_margin="0dip"
+            android:padding="0dip"
+            android:text="保险责任"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btn_compulsory_insurance_2"
+            style="@style/button"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_weight="1.0"
+             android:layout_margin="0dip"
+            android:padding="0dip"
+            android:text="浮动因素"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshExpandableListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/expandableListView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom"
+        android:layout_below="@id/top"
+        ptr:ptrHeaderBackground="@android:color/white"
+        ptr:ptrHeaderTextColor="@android:color/black"
+        ptr:ptrMode="pullFromStart" />
+
+</RelativeLayout>

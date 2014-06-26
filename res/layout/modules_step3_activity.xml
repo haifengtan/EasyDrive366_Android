@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    
+    android:orientation="vertical" >
+	<include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/navigation_bar" />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        style="@style/table"
+        android:stretchColumns="*" >
+		<View android:layout_width="match_parent"
+		    android:layout_height="30dp"></View>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input1"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/textview.right"
+                android:text="姓名：" />
+
+            <EditText
+                android:id="@+id/edt_name"
+                style="@style/edittext"
+                android:inputType="textNoSuggestions" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:text="" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row_car_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input2"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/textview.right"
+                android:text="准驾车型：" />
+
+            <EditText
+                android:id="@+id/edt_car_type"
+                style="@style/edittext"
+                android:layout_weight="1.0"
+                android:hint=""
+                android:inputType="textNoSuggestions" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:textSize="24sp"
+                android:text=">" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row_init_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input2"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/textview.right"
+                android:text="初领日期：" />
+
+            <EditText
+                android:id="@+id/edt_init_date"
+                style="@style/edittext"
+                android:layout_weight="1.0"
+                android:inputType="textNoSuggestions" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:textSize="24sp"
+                android:text=">" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input6"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_ok"
+                style="@style/button"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_span="3"
+                android:text="@string/next" />
+        </TableRow>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="设置向导第3步共4步"
+                android:textSize="24sp" />
+    </TableLayout>
+
+</RelativeLayout>

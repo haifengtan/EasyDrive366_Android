@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_favor"
+        android:showAsAction="always"
+        android:title="@string/favor"/>
+    <item
+        android:id="@+id/action_share"
+        android:showAsAction="always"
+        android:title="@string/share">
+        <menu>
+            <item
+                android:id="@+id/action_share_weixin"
+                android:showAsAction="ifRoom"
+                android:title="@string/share_weixin"/>
+            <item
+                android:id="@+id/action_share_friends"
+                android:showAsAction="ifRoom"
+                android:title="@string/share_weixin_friends"/>
+            <item
+                android:id="@+id/action_share_weibo"
+                android:showAsAction="ifRoom"
+                android:title="@string/share_weibo"/>
+           <!--  <item
+                android:id="@+id/action_share_email"
+                android:showAsAction="ifRoom"
+                android:title="@string/share_email"/>-->
+            <item
+                android:id="@+id/action_share_text"
+                android:showAsAction="ifRoom"
+                android:title="@string/share_text"/> 
+        </menu>
+    </item>
+
+</menu>

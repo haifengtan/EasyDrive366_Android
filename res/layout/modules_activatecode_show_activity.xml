@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/navigation_bar" />
+	<TableLayout
+        style="@style/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:stretchColumns="*" >
+		 <View android:layout_width="match_parent"
+		    android:layout_height="10dp"></View>
+        <TableRow
+           
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input1"
+            android:gravity="center" >
+
+            <TextView
+                
+                android:layout_span="1"
+                android:gravity="right"
+                android:layout_marginRight="10dp"
+                android:text="卡号：" >
+            </TextView>
+
+            <TextView
+                android:layout_span="2"
+                android:id="@+id/txt_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:text=""
+                 />
+           
+        </TableRow>
+        <TableRow
+            
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input2"
+            android:gravity="center" >
+
+            <TextView
+                
+                android:layout_span="1"
+                android:gravity="right"
+                android:layout_marginRight="10dp"
+                android:text="激活码：" >
+            </TextView>
+
+            <TextView
+                android:layout_span="2"
+                android:id="@+id/txt_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:text=""
+                 />
+             
+           
+        </TableRow>
+        <TableRow
+           
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input2"
+            android:gravity="center" >
+
+            <TextView
+                
+                android:layout_span="1"
+                android:gravity="right"
+                android:layout_marginRight="10dp"
+                android:text="激活时间：" >
+            </TextView>
+
+            <TextView
+                android:layout_span="2"
+                android:id="@+id/txt_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:text=""
+                 />
+             
+           
+        </TableRow>
+        <TableRow
+            
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input6"
+            android:gravity="center" >
+
+            <TextView
+                
+                android:layout_span="1"
+                android:gravity="right"
+                android:layout_marginRight="10dp"
+                android:text="有效期至：" >
+            </TextView>
+
+            <TextView
+                android:layout_span="2"
+                android:id="@+id/txt_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:text=""
+                 />
+            
+           
+        </TableRow>
+    </TableLayout>
+    <View android:layout_width="match_parent"
+		    android:layout_height="20dp"></View>
+    <TextView
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/signup_hit_input1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="服务项目"
+        android:textStyle="bold" />
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TableLayout
+        android:id="@+id/table_items"
+        style="@style/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:stretchColumns="*" >
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>

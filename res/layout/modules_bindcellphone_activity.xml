@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/navigation_bar" />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/table"
+        android:stretchColumns="*" >
+      	 <View android:layout_width="match_parent"
+		    android:layout_height="30dp"></View>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input1"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:gravity="right"
+                android:text="手机号码：" />
+
+            <EditText
+                android:id="@+id/edt_cellphone"
+               
+                 style="@style/edittext"
+                android:inputType="phone"
+                 >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:text="" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input2"
+            android:gravity="center" >
+            <Button
+                android:id="@+id/btn_get_code"
+                style="@style/button"
+                android:layout_span="3"
+                android:text="@string/get_code"
+                android:hint="" >
+           
+        
+            </Button>
+             </TableRow>
+		<TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input2"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:gravity="right"
+                android:text="验证码：" />
+
+            <EditText
+                android:id="@+id/edt_code"
+               
+                 style="@style/edittext"
+                android:inputType="phone"
+                 >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:text="" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input6"
+            android:gravity="center" >
+            <Button
+                android:id="@+id/btn_bind"
+                style="@style/button"
+                android:layout_span="3"
+                android:text="@string/bind"
+                android:hint="" >
+           
+        
+            </Button>
+             </TableRow>
+        
+		
+		 
+        </TableLayout>
+       
+
+</LinearLayout>

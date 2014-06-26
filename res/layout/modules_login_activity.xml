@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/default2"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        style="@style/table"
+        android:layout_marginTop="15dp"
+        android:stretchColumns="*" >
+
+        
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input1"
+            android:layout_gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/textview.right"
+                android:text="@string/username" />
+
+            <EditText
+                android:id="@+id/edt_login_username"
+                style="@style/edittext"
+            	android:inputType="textNoSuggestions"
+                 >
+            </EditText>
+
+             <TextView
+                android:id="@+id/img_choose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:textSize="24sp"
+                android:text=">"
+                 />
+        </TableRow>
+
+       
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input2"
+             android:layout_gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                 style="@style/textview.right"                
+                android:text="@string/password" />
+
+            <EditText
+                android:id="@+id/edt_login_passwrod"
+                style="@style/edittext"
+                android:inputType="textPassword"
+                android:hint="" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:text="" />
+        </TableRow>
+		 <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+         	android:background="@drawable/signup_hit_input2"
+         	 android:gravity="center"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/chb_remember_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="3"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:text="@string/remember_password" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+         	android:background="@drawable/signup_hit_input6"
+         	 android:layout_gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_login_login"
+                style="@style/button"
+                android:layout_span="3"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:text="@string/Login" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

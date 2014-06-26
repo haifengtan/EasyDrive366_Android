@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/navigation_bar" />
+	<TableLayout
+        style="@style/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:stretchColumns="1" >
+        <View android:layout_width="match_parent"
+		    android:layout_height="10dp"></View>
+        <TableRow
+           
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input1"
+            
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_span="1"
+                android:gravity="right"
+                android:layout_marginLeft="5dp"
+                android:text="保单号：" >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/txt_cardno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_span="2"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:text=""
+                 />
+           
+        </TableRow>
+        <TableRow
+            
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input6"
+            android:gravity="center" >
+
+            <TextView
+                
+                android:layout_span="1"
+                android:gravity="right"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="5dp"
+                android:text="保险期限：" >
+            </TextView>
+
+            <TextView
+                android:layout_span="2"
+                android:id="@+id/txt_valid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:text=""
+                 />
+             
+           
+        </TableRow>
+		 <View android:layout_width="match_parent"
+		    android:layout_height="10dp"></View>
+        <TableRow
+           
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input1"
+            android:gravity="center" >
+
+            <TextView
+                
+                android:layout_span="1"
+                android:gravity="right"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:text="姓名：" >
+            </TextView>
+
+            <TextView
+                android:layout_span="2"
+                android:id="@+id/txt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:text=""
+                 />
+           
+        </TableRow>
+        <TableRow
+            
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input2"
+            android:gravity="center" >
+
+            <TextView
+                
+                android:layout_span="1"
+                android:gravity="right"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:text="身份证：" >
+            </TextView>
+
+            <TextView
+                android:layout_span="2"
+                android:id="@+id/txt_identity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:text=""
+                 />
+             
+           
+        </TableRow>
+        <TableRow
+           
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input2"
+            android:gravity="center" >
+
+            <TextView
+                
+                android:layout_span="1"
+                android:gravity="right"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:text="手机号：" >
+            </TextView>
+
+            <TextView
+                android:layout_span="2"
+                android:id="@+id/txt_cell"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:text=""
+                 />
+             
+           
+        </TableRow>
+        <TableRow
+            
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input6"
+            android:gravity="center" >
+
+            <TextView
+                
+                android:layout_span="1"
+                android:gravity="right"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:text="保险地址：" >
+            </TextView>
+
+            <TextView
+                android:layout_span="2"
+                android:id="@+id/txt_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:text=""
+                 />
+            
+           
+        </TableRow>
+        <View android:layout_width="match_parent"
+		    android:layout_height="10dp"></View>
+        <TableRow
+           
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input1"
+            android:gravity="center" >
+
+            <TextView
+                
+                android:layout_span="1"
+                android:gravity="right"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:text="约定受益人：" >
+            </TextView>
+
+            <TextView
+                android:layout_span="2"
+                android:id="@+id/txt_cardno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:text=""
+                 />
+           
+        </TableRow>
+        <TableRow
+            android:id="@+id/row_bf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input2"
+            android:gravity="center" >
+
+            <TextView
+                
+                android:layout_span="1"
+                android:gravity="right"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:text="姓名：" >
+            </TextView>
+
+            <TextView
+                android:layout_span="2"
+                android:id="@+id/txt_bf_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:text=""
+                 />
+             
+           
+        </TableRow>
+        
+        <TableRow
+            
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_hit_input6"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/txt_bf_identity_label"
+                android:layout_span="1"
+                android:gravity="right"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:text="身份证：" >
+            </TextView>
+
+            <TextView
+                android:layout_span="2"
+                android:id="@+id/txt_bf_identity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:text="法定继承人作为受益人"
+                 />
+             
+           
+        </TableRow>
+    </TableLayout>
+    <View android:layout_width="match_parent"
+		    android:layout_height="20dp"></View>
+    
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TableLayout
+        android:id="@+id/table_items"
+        style="@style/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:stretchColumns="*" >
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>

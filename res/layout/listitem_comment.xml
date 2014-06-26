@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_margin="10dip">
+	    <LinearLayout android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true">
+	        <TextView android:id="@+id/txt_username"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/placeholder"
+	            />
+	        <TextView android:id="@+id/txt_date"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dip"
+	            android:text="@string/placeholder"
+	            />
+	    </LinearLayout>
+	    <LinearLayout android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true">
+	        <RatingBar android:id="@+id/rating_bar"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:numStars="5"
+	            style="?android:attr/ratingBarStyleSmall"/>
+	    </LinearLayout>
+	    
+	</RelativeLayout>
+	<TextView android:id="@+id/txt_comment"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_margin="10dip"
+	            android:text="@string/placeholder2"
+	            />
+</LinearLayout>

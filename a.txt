@@ -1,0 +1,38 @@
+
+密钥库类型: JKS
+密钥库提供方: SUN
+
+您的密钥库包含 1 个条目
+
+别名: easy drive 366
+创建日期: 2013-3-28
+条目类型: PrivateKeyEntry
+证书链长度: 1
+证书[1]:
+所有者: CN=Dong Sun, OU=cn.countnet, O=cn, L=Qingdao, ST=Shandong, C=86
+发布者: CN=Dong Sun, OU=cn.countnet, O=cn, L=Qingdao, ST=Shandong, C=86
+序列号: 64acf7a6
+有效期开始日期: Thu Mar 28 21:19:50 CST 2013, 截止日期: Mon Mar 22 21:19:50 CST 2038
+证书指纹:
+	 MD5: B0:77:B6:55:67:48:96:5E:EB:4F:FE:91:36:73:E0:C2
+	 SHA1: 8A:41:67:7F:D0:95:AA:F9:D8:CD:BC:EA:CE:A1:CF:5F:26:0D:A6:66
+	 SHA256: D6:0D:9D:CA:26:78:10:08:D1:DD:B0:97:68:13:47:8C:D8:32:59:EF:A9:8F:B0:F4:39:36:10:BF:F8:88:77:1D
+	 签名算法名称: SHA256withRSA
+	 版本: 3
+
+扩展: 
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 63 5F 17 CF AA 9D BB 54   64 EC 9A 68 32 66 14 4C  c_.....Td..h2f.L
+0010: F6 D8 94 1C                                        ....
+]
+]
+
+
+
+*******************************************
+*******************************************
+
+

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cn.count.easydrive366"
+    android:versionCode="10"
+    android:versionName="2.1.1" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17"
+        tools:ignore="OldTargetApi" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 使用网络功能所需权限 -->
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+
+    <!-- 获取设置信息和详情页直接拨打电话需要以下权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+
+    <!-- 使用定位功能所需权限,demo已集成百度定位SDK,不使用定位功能可去掉以下6项 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+
+    <permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
+    </permission>
+
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="cn.count.easydrive366.MainActivity"
+            android:screenOrientation="sensorPortrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+            <intent-filter>
+                
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="easydrive366" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity android:name="cn.count.easydrive366.Splash" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.HomeActivity" >
+        </activity>
+        <activity
+            android:name="cn.count.easydrive366.WelcomeActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.InformationActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.HelpCallActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.RescueActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.MaintainActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.DriverLicenseActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.CarRegistrationActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.TaxForCarShipActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.CompulsoryInsuranceActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.BusinessInsuranceActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.BusinessSuggestionActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.DriverLicenseEditActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.MaintainEditActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.CarRegistrationEditActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.LoginActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.SignupActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.ViolationSearchActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.InsuranceProcessListActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.BrowserActivity" >
+        </activity>
+
+        <receiver
+            android:name="cn.count.easydriver366.service.GetLatestReceiver"
+            android:enabled="true"
+            android:persistent="true" >
+            <intent-filter>
+                <action android:name="cn.count.easydriver366.service.GetLatestReceiver" >
+                </action>
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="cn.count.easydriver366.service.BackendService"
+            android:enabled="true"
+            android:persistent="true" >
+        </service>
+
+        <receiver
+            android:name="cn.count.easydriver366.service.StartServiceReceiver"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cn.count.easydrive366.components.HomeMenuItem$LatestInformationReceiver" >
+            <intent-filter>
+                <action android:name="cn.count.easydrive366.components.HomeMenuItem.LatestInformationReceiver" >
+                </action>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name="cn.count.easydrive366.SettingsActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.PasswordResetActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.BindCellphoneActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.CarServiceActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.CarServiceDetailActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.CarServiceVendorActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.CarServiceWikiActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.CarServiceNoteActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.UserFeedbackActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.ViolationDetailActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.ArticleCommentsActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.AddCommentsActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.InformationDetailActivity" >
+        </activity>
+        <activity
+            android:name="cn.count.easydrive366.ActivateCodeActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.ActivateCodeShowActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.signup.Step0Activity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.signup.Step1Activity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.signup.Step2Activity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.signup.Step3Activity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.baidumap.ShowLocationActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.barcode.ShowBarcodeActivity" >
+        </activity>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+
+        <activity android:name="cn.count.easydrive366.baidumap.ShowShopInformationActivity" />
+        <activity android:name="cn.count.easydrive366.baidumap.BaiduMapNavigationActivity" />
+        <activity android:name="cn.count.easydrive366.photo.TakePhotoActivity" />
+        <activity android:name="cn.count.easydrive366.baidumap.SearchResultActivity" />
+        <activity android:name="cn.count.easydrive366.baidumap.SearchShopActivity" />
+        <activity android:name="cn.count.easydrive366.card.CardViewActivity" />
+        <activity android:name="cn.count.easydrive366.card.CardDetailActivity" />
+        <activity android:name="cn.count.easydrive366.card.AddCardStep1Activity" />
+        <activity android:name="cn.count.easydrive366.card.AddCardStep2Activity" />
+        <activity android:name="cn.count.easydrive366.goods.GoodsListActivity" />
+        <activity android:name="cn.count.easydrive366.goods.GoodsDetailActivity" >
+
+            <!--
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name="cn.count.easydrive366.provider.ProviderListActivity" />
+        <activity android:name="cn.count.easydrive366.provider.ProviderDetailActivity" >
+
+            <!--
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name="cn.count.easydrive366.article.ArticleListActivity" />
+        <activity android:name="cn.count.easydrive366.comments.ItemCommentsActivity" />
+        <activity android:name="cn.count.easydrive366.comments.DoCommentActivity" />
+        <activity android:name="cn.count.easydrive366.user.BoundActivity" />
+        <activity android:name="cn.count.easydrive366.user.TaskListActivity" />
+        <activity android:name="cn.count.easydrive366.user.DoTaskActivity" />
+        <activity android:name="cn.count.easydrive366.user.FriendActivity" >
+
+            <!--
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name="cn.count.easydrive366.order.NewOrderActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.order.PayActivity"
+             android:exported="true"
+            android:launchMode="singleTop">
+            
+        </activity>
+        <activity android:name="cn.count.easydrive366.order.NeedPayListActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.order.OrderDetailActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.insurance.InsuranceMenuActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.user.SetupUserActivity" >
+        </activity>
+        <activity
+            android:name="com.alipay.android.app.sdk.WapPayActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.insurance.BuyInsuranceStep1" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.insurance.BuyInsuranceStep2" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.insurance.BuyInsuranceStep3" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.insurance.BuyInsuranceStep4" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.insurance.BuyInsuranceStep5" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.insurance.BuyInsuranceStep6" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.insurance.BuyInsuranceStep7" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.insurance.InsuranceList" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.insurance.InsuranceList2" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.insurance.UploadInsPhotoActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.user.MyFavorActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.user.MyHistroyActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.afterpay.AddressActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.afterpay.AccidentActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.afterpay.ContentsActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.afterpay.FinishedActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.carservice.ServiceDetailActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.afterpay.JobSelectActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.afterpay.JobDetailActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.user.UesrProfileActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.goods.GoodsShopListActivity" >
+        </activity>
+        <activity android:name="cn.count.easydrive366.guide.GuideActivity" >
+        </activity>
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="wxe590795397d68fd3"/>
+            </intent-filter>
+            
+            
+        </activity>
+        <!-- <activity android:name="cn.count.easydrive366.share.OpenActivity" >
+            <intent-filter>
+                <data android:scheme="easydrive366" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity> -->
+        <receiver android:name="cn.count.easydrive366.order.PayActivity$Wx_Receiver" >
+            <intent-filter>
+                <action android:name="wx.pay.success" >
+                </action>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

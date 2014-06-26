@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:layout_marginLeft="20dip"
+        android:textSize="14sp"
+        android:text="照片"/>
+    <TableLayout
+        android:id="@+id/table_actions"
+        style="@style/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:gravity="center"
+        android:stretchColumns="*" />
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:textSize="14sp"
+        android:text="说明"/>
+    <RelativeLayout
+        android:id="@+id/layout_help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:background="@drawable/signup_hit_input0"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/txt_help_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dip"
+            android:text="@string/experience" />
+
+        
+
+        <ImageView
+            android:id="@+id/img_jiantou3"
+            android:layout_width="15dip"
+            android:layout_height="15dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dip"
+            android:layout_marginTop="2dip"
+            android:contentDescription="@string/experience"
+            android:src="@drawable/jiantou" />
+    </RelativeLayout>
+
+</LinearLayout>

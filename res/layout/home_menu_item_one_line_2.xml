@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+     >
+    
+    <TextView android:id="@+id/listitem_title"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"    
+        
+        android:padding="8dip"
+         android:textSize="18sp"
+        android:textStyle="bold"
+    />
+    <Button android:id="@+id/listitem_pic"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/phone"
+        android:padding="8dip"
+    />
+   
+    <TextView android:id="@+id/listitem_content"
+        android:layout_toRightOf="@id/listitem_title"
+        android:layout_toLeftOf="@id/listitem_pic"
+        android:layout_centerVertical="true"
+        android:gravity="left"
+        android:paddingLeft="5dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+       
+        android:textSize="12sp"
+        android:textColor="@android:color/secondary_text_light" />
+    
+
+</RelativeLayout>
