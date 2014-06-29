@@ -32,7 +32,11 @@ import android.util.Log;
 import android.webkit.MimeTypeMap;
 import android.widget.Toast;
 
-
+/**
+ * 检查版本更新
+ * @author Administrator
+ *
+ */
 public class CheckUpdate implements HttpClient.IHttpCallback {
 	private Context _context;
 	private HttpClient _http;

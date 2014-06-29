@@ -91,6 +91,10 @@ public class RecommentsFragment extends Fragment implements IRightButtonPressed,
 		return view;
 		
 	}
+	
+	/**
+	 * 加载推荐列表数据
+	 */
 	private void load_data(){
 		String url = String.format("goods/get_goods_list?userid=%d",
 				AppSettings.userid);
