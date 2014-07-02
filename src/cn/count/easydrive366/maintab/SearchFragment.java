@@ -88,22 +88,26 @@ public class SearchFragment extends BaseListViewV4Fragment {
 	@Override
 	protected void onListItemClick(final View view, final long index) {
 
-		if (_list != null) {
-
-			Map<String, Object> map = _list.get((int) index);
-			ViewHolder holder = (ViewHolder) view.getTag();
-			holder.selected.toggle();
-			map.put("selected", holder.selected.isChecked());
-		}
+//		if (_list != null) {
+//
+//			Map<String, Object> map = _list.get((int) index);
+//			ViewHolder holder = (ViewHolder) view.getTag();
+//			holder.selected.toggle();
+//			map.put("selected", holder.selected.isChecked());
+//		}
+		String key = txtSearch.getText().toString();
+		String types =  _list.get((int) index).get("code").toString();
+		Intent intent = new Intent(this.getActivity(), GoodsListActivity.class);
+		intent.putExtra("key", key);
+		intent.putExtra("types",types);
+		startActivity(intent);
 	}
 
 	@Override
 	protected void setupListItem(ViewHolder holder, Map<String, Object> info) {
 		holder.title.setText(info.get("name").toString());
-		//holder.detail.setText(info.get("code").toString());
 		
-		holder.selected.setChecked(info.get("selected").toString()
-				.equals("true"));
+//		holder.selected.setChecked(info.get("selected").toString().equals("true"));
 	}
 
 	@Override
@@ -111,34 +115,39 @@ public class SearchFragment extends BaseListViewV4Fragment {
 		holder.title = (TextView) convertView
 				.findViewById(R.id.txt_listitem_detail_title);
 		
-		holder.selected = (CheckBox) convertView.findViewById(R.id.chk_item);
+//		holder.selected = (CheckBox) convertView.findViewById(R.id.chk_item);
 		convertView.setTag(holder);
-		// LinearLayout layout =
-		// (LinearLayout)convertView.findViewById(R.id.layout_delete);
-
 	}
 
 	@Override
 	public void onRightButtonPress() {
-		InputMethodManager imm = (InputMethodManager)this.getActivity(). getSystemService(Context.INPUT_METHOD_SERVICE);
-		imm.hideSoftInputFromWindow(txtSearch.getWindowToken(), 0);
+//		InputMethodManager imm = (InputMethodManager)this.getActivity(). getSystemService(Context.INPUT_METHOD_SERVICE);
+//		imm.hideSoftInputFromWindow(txtSearch.getWindowToken(), 0);
+//		
+//		StringBuilder sb = new StringBuilder();
+//		for(int i=0;i<_list.size();i++){
+//			Map<String, Object> map = _list.get(i);
+//			Object obj = map.get("selected");
+//			if (obj.equals(true)){
+//				sb.append(map.get("code"));
+//				sb.append(",");
+//			}
+//			
+//		}
+//		String key = txtSearch.getText().toString();
+//		String types = sb.toString();
+//		Intent intent = new Intent(this.getActivity(), GoodsListActivity.class);
+//		intent.putExtra("key", key);
+//		intent.putExtra("types",types);
+//		startActivity(intent);
+		
+		
 		String key = txtSearch.getText().toString();
-		StringBuilder sb = new StringBuilder();
-		for(int i=0;i<_list.size();i++){
-			Map<String, Object> map = _list.get(i);
-			Object obj = map.get("selected");
-			if (obj.equals(true)){
-				sb.append(map.get("code"));
-				sb.append(",");
-			}
-			
-		}
-		String types = sb.toString();
+		String types = "";
 		Intent intent = new Intent(this.getActivity(), GoodsListActivity.class);
 		intent.putExtra("key", key);
 		intent.putExtra("types",types);
 		startActivity(intent);
-		
 	}
 
 	@Override

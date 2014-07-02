@@ -66,7 +66,7 @@
     <string name="input_activate_code">请输入激活码：</string>
     <string name="activate_code_example"></string>
     <string name="next">下一步</string>
-    <string name="username_hint">车牌号</string>
+    <string name="username_hint">手机号/车牌号</string>
     <string name="take_photo">拍照</string>
     <string name="pick_photo">照片库</string>
     <string name="choose_photo">请选择来源</string>

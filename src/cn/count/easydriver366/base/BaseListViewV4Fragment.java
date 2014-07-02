@@ -216,6 +216,7 @@ public abstract class BaseListViewV4Fragment extends BaseHttpV4Fragment {
 			}else{
 				holder = (ViewHolder)convertView.getTag();
 			}
+			
 			if (holder.selected!=null){
 				if (_isInDeleting){
 					holder.selected.setVisibility(android.view.View.VISIBLE);
