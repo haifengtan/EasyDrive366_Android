@@ -36,20 +36,25 @@ public class GoodsListActivity extends BaseListViewActivity {
 		this.resource_listview_id = R.id.modules_information_listview;
 		//this.resource_listitem_id = R.layout.module_listitem;
 		this.resource_listitem_id = R.layout.listitem_goods;
+		//搜索关键字
 		_key = getIntent().getStringExtra("key");
-		if (_key!=null && !_key.isEmpty()){
-			_types= getIntent().getStringExtra("types");
-			
-			_isSearching = true;
-		}
-		
+		//搜索条目分类
+		_types= getIntent().getStringExtra("types");
+		//是否是搜索页面跳转过来
+		_isSearching=getIntent().getStringExtra("isSearching").equals("YES")?true:false;
+		//加载数据
 		reload_data();
 		this.setupPullToRefresh();
 	}
 	@Override
 	protected void reload_data(){
+		
+		System.out.println("url="+String.format("library/get_list?userid=%d&type=%s&keyword=%s", AppSettings.userid,_types,_key));
 		if (_isSearching){
-			this.get(String.format("library/get_list?userid=%d&type=%s&keyword=%s", AppSettings.userid,_types,_key), 1);
+//			this.get(String.format("library/get_list?userid=%d&type=%s&keyword=%s", AppSettings.userid,_types,_key), 1);
+
+			this.get(String.format("goods/get_goods_list?userid=%d&type=%s&keyword=%s", AppSettings.userid,_types,_key), 1);
+
 			_isSearching = false;
 			
 		}else{

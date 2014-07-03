@@ -95,12 +95,15 @@ public class SearchFragment extends BaseListViewV4Fragment {
 //			holder.selected.toggle();
 //			map.put("selected", holder.selected.isChecked());
 //		}
+		if (_list != null) {
 		String key = txtSearch.getText().toString();
 		String types =  _list.get((int) index).get("code").toString();
 		Intent intent = new Intent(this.getActivity(), GoodsListActivity.class);
 		intent.putExtra("key", key);
 		intent.putExtra("types",types);
+		intent.putExtra("isSearching","YES");
 		startActivity(intent);
+		}
 	}
 
 	@Override
@@ -147,6 +150,7 @@ public class SearchFragment extends BaseListViewV4Fragment {
 		Intent intent = new Intent(this.getActivity(), GoodsListActivity.class);
 		intent.putExtra("key", key);
 		intent.putExtra("types",types);
+		intent.putExtra("isSearching","YES");
 		startActivity(intent);
 	}
 
