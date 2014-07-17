@@ -1,9 +1,5 @@
 package cn.count.easydrive366.push;
 
-import java.util.Calendar;
-
-import android.util.Log;
-
 import com.baidu.frontia.FrontiaApplication;
 
 /*

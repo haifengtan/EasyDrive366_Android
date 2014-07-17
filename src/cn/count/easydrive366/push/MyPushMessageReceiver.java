@@ -8,9 +8,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
-import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.text.TextUtils;
 import android.util.Log;
+import cn.count.easydriver366.base.AppSettings;
 
 import com.baidu.frontia.api.FrontiaPushMessageReceiver;
 
@@ -63,17 +65,24 @@ public class MyPushMessageReceiver extends FrontiaPushMessageReceiver {
     @Override
     public void onBind(Context context, int errorCode, String appid,
             String userId, String channelId, String requestId) {
-        String responseString = "onBind errorCode=" + errorCode + " appid="
-                + appid + " userId=" + userId + " channelId=" + channelId
-                + " requestId=" + requestId;
-        Log.d(TAG, responseString);
-  System.out.println("绑定结果:="+responseString);
-        // 绑定成功，设置已绑定flag，可以有效的减少不必要的绑定请求
+//        String responseString = "onBind errorCode=" + errorCode + " appid="
+//                + appid + " userId=" + userId + " channelId=" + channelId
+//                + " requestId=" + requestId;
+//        Log.d(TAG, responseString);
+//        System.out.println("绑定结果:="+responseString);
+        // 绑定成功，存储绑定信息，设置已绑定flag，可以有效的减少不必要的绑定请求 
         if (errorCode == 0) {
             PushUtils.setBind(context, true);
+            AppSettings.pushUserID=userId;
+            AppSettings.pushChannelID=channelId;
+            SharedPreferences prefs =context.getSharedPreferences(AppSettings.AppTile+"_login", Context.MODE_PRIVATE);
+			Editor editor = prefs.edit();
+			editor.putString("pushUserID", userId);
+			editor.putString("pushChannelID", channelId);
+			editor.commit();
+			//提交推送信息到服务器
+			AppSettings.sendPushInfo(context);
         }
-        // Demo更新界面展示代码，应用请在这里加入自己的处理逻辑
-        updateContent(context, responseString);
     }
 
     /**

@@ -12,18 +12,16 @@ import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.util.Log;
 
 public final class AppSettings {
-
+	//正式服务器
 	//static public String ServerUrl = "http://m.4006678888.com:21000/index.php/";
-	static public String ServerUrl = "http://119.167.144.23:21000/index.php/";
+	//测试服务器
+	static public String ServerUrl = "http://yijia366.oicp.net:21000/index.php/";
 	
 	static public final String AppTile="cn.count.EasyDrive366";
 	static public String LatestNewsKey="LatestNews";
@@ -42,22 +40,53 @@ public final class AppSettings {
 	
 	static public String SINA_WEIBO_ID="4031912721";  //"4031912721"
 	static public String BAIDUMAPKEY="939cb0c01d09f55edbf15645e42a1624";//for release
-	
+	/**用户id  -1表示用户未登录*/
 	static public int userid=-1;
+	
+	/**默认加载的条数*/
 	static public int TotalPageCount=12;
+	
+	/**用户名*/
 	static public String username;
+	
+	/**百度推送使用的userId*/
+	static public String pushUserID;
+	
+	/**百度推送使用的channelID*/
+	static public String pushChannelID;
+	
+	/**是否已经登录*/
 	static public boolean isLogin= false;
+	
 	static public JSONArray driver_type_list;
+	
+	/**服务请求间隔*/
 	static public int update_time=4*60*60;
+	
 	static public boolean isquiting = false;
+	
+	/**应用版本*/
 	static public String version = "2.1.1";
 	
-	public static boolean isOutputDebug = true;
+	/**是否输出调试日志*/
+	public static boolean isOutputDebug = false;
+	
 	public static final int READ_TIMEOUT = 10;
 	public static final int CONNECT_TIMEOUT = 15;
 	
 	
 	public static int task_id =0;
+	
+	/**
+	 * 拼接发送百度推送信息的URL
+	 * @return
+	 */
+	static public String url_for_send_push_info()
+	{
+		
+	    return String.format("pushapi/add_baidu_push?userid=%s&channeled=%s&memberId=%s&device_type=%s",pushUserID,pushChannelID,userid,3);
+	}
+	
 	static public String url_for_get_news()
 	{
 		
@@ -181,9 +210,14 @@ public final class AppSettings {
 	static public String get_userfeedback(){
 		return String.format("api/get_feedback_user?userid=%d", userid);
 	}
+	
+	/**
+	 * 用户登录
+	 * @param result
+	 * @param context
+	 */
 	static public void login(JSONObject result,Context context) {
 		try {
-			
 			userid = result.getJSONObject("result").getInt("id");
 			username = result.getJSONObject("result").getString("username");
 			isLogin = true;
@@ -200,15 +234,24 @@ public final class AppSettings {
 			editor.putString("username", username);
 			editor.putInt("update_time", update_time);
 			editor.commit();
+			//登录成功后提交推送信息到服务器
+			sendPushInfo(context);
 		} catch (JSONException e) {
 			AppTools.log(e);
 		}
 	}
+	
+	/**
+	 * 获取用户的信息  如果用户没有登录 则返回默认信息
+	 * @param context
+	 */
 	static public  void restore_login_from_device(Context context){
 		SharedPreferences prefs =context.getSharedPreferences(AppSettings.AppTile+"_login", Context.MODE_PRIVATE);
 		userid = prefs.getInt("userid", -1);
 		isLogin = prefs.getBoolean("isLogin", false);
 		username = prefs.getString("username", "");
+		pushUserID = prefs.getString("pushUserID", "");
+		pushChannelID = prefs.getString("pushChannelID", "");
 		update_time = prefs.getInt("update_time", 4*60*60);
 	}
 	static public void logout(Context context){
@@ -334,4 +377,20 @@ public static String readInputStream(InputStream stream) throws IOException,Unsu
 		return item;
 	}
 	
+	/**
+	 * 提交推送信息到服务器
+	 * @param context
+	 */
+	static public void sendPushInfo(Context context){
+		if (isLogin) {
+			new Thread(new Runnable() {
+				@Override
+				public void run() {
+						String res = GetXML.doGet(ServerUrl
+								+ url_for_send_push_info(), "utf-8");
+						System.out.println(res);
+				}
+			}).start();
+		}
+	}
 }

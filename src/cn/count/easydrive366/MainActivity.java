@@ -61,6 +61,11 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * 首页
+ * @author admin
+ *
+ */
 public class MainActivity extends FragmentActivity {
 	public static MainActivity instance = null;
 	private EDViewPager mTabPager;// 声明对象
