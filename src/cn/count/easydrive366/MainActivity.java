@@ -105,7 +105,7 @@ public class MainActivity extends FragmentActivity {
 		AppSettings.restore_login_from_device(this);
 		
 		//启动后台服务
-		startBackendService();
+//		startBackendService();
 		
 		getActionBar().setCustomView(R.layout.actionbar);
 		instance = this;

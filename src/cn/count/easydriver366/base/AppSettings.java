@@ -83,8 +83,8 @@ public final class AppSettings {
 	 */
 	static public String url_for_send_push_info()
 	{
-		
-	    return String.format("pushapi/add_baidu_push?userid=%s&channeled=%s&memberId=%s&device_type=%s",pushUserID,pushChannelID,userid,3);
+//		   return String.format("pushapi/add_pushinfo?userId=%s&channelId=%s&memberId=%d&equipment=3",pushUserID,pushChannelID,userid);
+	    return String.format("pushapi/add_pushinfo?userid=%s&channelid=%s&memberid=%s&equipment=%s",pushUserID,pushChannelID,userid,3);
 	}
 	
 	static public String url_for_get_news()
@@ -386,9 +386,8 @@ public static String readInputStream(InputStream stream) throws IOException,Unsu
 			new Thread(new Runnable() {
 				@Override
 				public void run() {
-						String res = GetXML.doGet(ServerUrl
+						GetXML.doGet(ServerUrl
 								+ url_for_send_push_info(), "utf-8");
-						System.out.println(res);
 				}
 			}).start();
 		}
