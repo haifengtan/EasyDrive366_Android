@@ -248,8 +248,8 @@ public class MyPushMessageReceiver extends FrontiaPushMessageReceiver {
     public void onUnbind(Context context, int errorCode, String requestId) {
         String responseString = "onUnbind errorCode=" + errorCode
                 + " requestId = " + requestId;
-        Log.d(TAG, responseString);
-
+//        Log.d(TAG, responseString);
+System.out.println("解除绑定");
         // 解绑定成功，设置未绑定flag，
         if (errorCode == 0) {
             PushUtils.setBind(context, false);

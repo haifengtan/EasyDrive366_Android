@@ -12,6 +12,9 @@ import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.baidu.android.pushservice.PushManager;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -264,6 +267,7 @@ public final class AppSettings {
 		editor.putString("username", "");
 		editor.putInt("update_time", 4*60*60);
 		editor.commit();
+		PushManager.unbind(context);
 	}
 	
 public static String readInputStream(InputStream stream) throws IOException,UnsupportedEncodingException{
