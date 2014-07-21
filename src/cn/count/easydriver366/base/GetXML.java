@@ -59,6 +59,7 @@ public class GetXML {
 		HttpResponse reponse = null; // 等待应答
 		GET_URL = GET_URL.replace(" ", "%20");
 		GET_URL = GET_URL.replace("\\", "%5C");
+//		System.out.println("url="+GET_URL);
 		try {
 			HttpParams httpParams = new BasicHttpParams();
 			HttpConnectionParams.setConnectionTimeout(httpParams, 5000);

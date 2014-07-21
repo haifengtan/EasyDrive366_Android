@@ -86,8 +86,8 @@ public final class AppSettings {
 	 */
 	static public String url_for_send_push_info()
 	{
-//		   return String.format("pushapi/add_pushinfo?userId=%s&channelId=%s&memberId=%d&equipment=3",pushUserID,pushChannelID,userid);
-	    return String.format("pushapi/add_pushinfo?userid=%s&channelid=%s&memberid=%s&equipment=%s",pushUserID,pushChannelID,userid,3);
+		   return String.format("pushapi/add_pushinfo?userId=%s&channelId=%s&memberId=%d&equipment=3",pushUserID,pushChannelID,userid);
+//	    return String.format("pushapi/add_pushinfo?userid=%s&channelid=%s&memberid=%s&equipment=%s",pushUserID,pushChannelID,userid,3);
 	}
 	
 	static public String url_for_get_news()
