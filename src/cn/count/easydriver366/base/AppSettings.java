@@ -22,7 +22,7 @@ import android.util.Log;
 
 public final class AppSettings {
 	//正式服务器
-	//static public String ServerUrl = "http://m.4006678888.com:21000/index.php/";
+//	static public String ServerUrl = "http://m.4006678888.com:21000/index.php/";
 	//测试服务器
 	static public String ServerUrl = "http://yijia366.oicp.net:21000/index.php/";
 	
@@ -72,7 +72,7 @@ public final class AppSettings {
 	static public String version = "2.1.1";
 	
 	/**是否输出调试日志*/
-	public static boolean isOutputDebug = false;
+	public static boolean isOutputDebug = true;
 	
 	public static final int READ_TIMEOUT = 10;
 	public static final int CONNECT_TIMEOUT = 15;
