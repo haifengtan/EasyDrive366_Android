@@ -59,11 +59,11 @@ public class MyPushMessageReceiver extends FrontiaPushMessageReceiver {
 	@Override
 	public void onBind(Context context, int errorCode, String appid,
 			String userId, String channelId, String requestId) {
-		// String responseString = "onBind errorCode=" + errorCode + " appid="
-		// + appid + " userId=" + userId + " channelId=" + channelId
-		// + " requestId=" + requestId;
-		// Log.d(TAG, responseString);
-		// System.out.println("绑定结果:="+responseString);
+		 String responseString = "onBind errorCode=" + errorCode + " appid="
+		 + appid + " userId=" + userId + " channelId=" + channelId
+		 + " requestId=" + requestId;
+		 Log.d(TAG, responseString);
+		 System.out.println("绑定结果:="+responseString);
 		// 绑定成功，存储绑定信息，设置已绑定flag，可以有效的减少不必要的绑定请求
 		if (errorCode == 0) {
 			PushUtils.setBind(context, true);
@@ -113,7 +113,7 @@ public class MyPushMessageReceiver extends FrontiaPushMessageReceiver {
 		}
 
 		// Demo更新界面展示代码，应用请在这里加入自己的处理逻辑
-		updateContent(context, messageString);
+//		updateContent(context, messageString);
 	}
 
 	/**
@@ -178,7 +178,7 @@ public class MyPushMessageReceiver extends FrontiaPushMessageReceiver {
 		Log.d(TAG, responseString);
 
 		// Demo更新界面展示代码，应用请在这里加入自己的处理逻辑
-		updateContent(context, responseString);
+//		updateContent(context, responseString);
 	}
 
 	/**
@@ -227,7 +227,7 @@ public class MyPushMessageReceiver extends FrontiaPushMessageReceiver {
 		Log.d(TAG, responseString);
 
 		// Demo更新界面展示代码，应用请在这里加入自己的处理逻辑
-		updateContent(context, responseString);
+//		updateContent(context, responseString);
 	}
 
 	/**
@@ -244,6 +244,7 @@ public class MyPushMessageReceiver extends FrontiaPushMessageReceiver {
 	public void onUnbind(Context context, int errorCode, String requestId) {
 		String responseString = "onUnbind errorCode=" + errorCode
 				+ " requestId = " + requestId;
+		System.out.println("解除绑定");
 		// 解绑定成功，设置未绑定flag，
 		if (errorCode == 0) {
 			PushUtils.setBind(context, false);

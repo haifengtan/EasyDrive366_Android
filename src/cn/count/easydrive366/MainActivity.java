@@ -63,8 +63,9 @@ import android.widget.Toast;
 
 /**
  * 首页
+ * 
  * @author admin
- *
+ * 
  */
 public class MainActivity extends FragmentActivity {
 	public static MainActivity instance = null;
@@ -73,7 +74,7 @@ public class MainActivity extends FragmentActivity {
 			_imgSettings;
 	private SectionsPagerAdapter mSectionsPagerAdapter;
 	// private HomeFragment _home;
-	//推荐列表
+	// 推荐列表
 	private RecommentsFragment _home;
 	private boolean _userWantQuit = false;
 	private Timer _quitTimer;
@@ -93,20 +94,19 @@ public class MainActivity extends FragmentActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// 初始化百度推送
-		initBaiduPush();
-
+		AppSettings.initBaiduPush(getApplicationContext(), this);
 		// requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main_activity);
 		// 启动activity时不自动弹出软键盘
 		getWindow().setSoftInputMode(
 				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-		//获取是否登录的信息
+		// 获取是否登录的信息
 		AppSettings.restore_login_from_device(this);
-		
-		//启动后台服务
-//		startBackendService();
-		
+
+		// 启动后台服务
+		// startBackendService();
+
 		getActionBar().setCustomView(R.layout.actionbar);
 		instance = this;
 		// this.getActionBar().setDisplayShowTitleEnabled(true);
@@ -139,17 +139,17 @@ public class MainActivity extends FragmentActivity {
 		mTabPager.setAdapter(mSectionsPagerAdapter);
 		mTabPager.getCurrentItem();
 
-		//检查更新
+		// 检查更新
 		new CheckUpdate(this, false);
-		
-		//检测点击的是图片还是列表
+
+		// 检测点击的是图片还是列表
 		handle_extra_call();
-		
+
 		SharedPreferences pref = this.getSharedPreferences("first_run",
 				MODE_PRIVATE);
 		boolean isfirst = pref.getBoolean("isfirst", true);
-		
-		/*如果是第一次启动则跳转到引导页面*/
+
+		/* 如果是第一次启动则跳转到引导页面 */
 		if (isfirst) {
 			Editor editor = pref.edit();
 			editor.putBoolean("isfirst", false);
@@ -466,22 +466,4 @@ public class MainActivity extends FragmentActivity {
 		 */
 	}
 
-	/**
-	 * 初始化百度推送
-	 */
-	public void initBaiduPush() {
-		// Push: 以apikey的方式登录，一般放在主Activity的onCreate中。
-		// 这里把apikey存放于manifest文件中，只是一种存放方式，
-		// 您可以用自定义常量等其它方式实现，来替换参数中的Utils.getMetaValue(PushDemoActivity.this,
-		// "api_key")
-		// 通过share preference实现的绑定标志开关，如果已经成功绑定，就取消这次绑定
-		if (!PushUtils.hasBind(getApplicationContext())) {
-			PushManager.startWork(getApplicationContext(),
-					PushConstants.LOGIN_TYPE_API_KEY,
-					PushUtils.getMetaValue(MainActivity.this, "api_key"));
-			// Push: 如果想基于地理位置推送，可以打开支持地理位置的推送的开关
-			// PushManager.enableLbs(getApplicationContext());
-		}
-
-	}
 }

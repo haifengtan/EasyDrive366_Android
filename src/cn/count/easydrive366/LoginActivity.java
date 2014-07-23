@@ -127,6 +127,9 @@ public class LoginActivity extends BaseHttpActivity {
 	public void processMessage(int msgType, final Object result) {
 		super.processMessage(msgType, result);
 		if (this.isSuccess(result)){
+			//绑定百度推送
+			AppSettings.initBaiduPush(getApplicationContext(), this);
+			//登录设置
 			AppSettings.login((JSONObject) result,this);
 			//saveLogin();
 			this.saveLogin(edtUsername.getText().toString(), edtPassword.getText().toString(), chbRememberPassword.isChecked());

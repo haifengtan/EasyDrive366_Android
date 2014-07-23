@@ -13,8 +13,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import cn.count.easydrive366.MainActivity;
+import cn.count.easydrive366.push.PushUtils;
+
+import com.baidu.android.pushservice.PushConstants;
 import com.baidu.android.pushservice.PushManager;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -238,7 +243,7 @@ public final class AppSettings {
 			editor.putInt("update_time", update_time);
 			editor.commit();
 			//登录成功后提交推送信息到服务器
-			sendPushInfo(context);
+//			sendPushInfo(context);
 		} catch (JSONException e) {
 			AppTools.log(e);
 		}
@@ -387,6 +392,7 @@ public static String readInputStream(InputStream stream) throws IOException,Unsu
 	 */
 	static public void sendPushInfo(Context context){
 		if (isLogin) {
+			System.out.println("发送到服务器");
 			new Thread(new Runnable() {
 				@Override
 				public void run() {
@@ -395,5 +401,24 @@ public static String readInputStream(InputStream stream) throws IOException,Unsu
 				}
 			}).start();
 		}
+	}
+	
+	/**
+	 * 初始化百度推送
+	 */
+	static public void initBaiduPush(Context context,Activity activity) {
+		// Push: 以apikey的方式登录，一般放在主Activity的onCreate中。
+		// 这里把apikey存放于manifest文件中，只是一种存放方式，
+		// 您可以用自定义常量等其它方式实现，来替换参数中的Utils.getMetaValue(PushDemoActivity.this,
+		// "api_key")
+		// 通过share preference实现的绑定标志开关，如果已经成功绑定，就取消这次绑定
+		if (!PushUtils.hasBind(context)) {
+			PushManager.startWork(context,
+					PushConstants.LOGIN_TYPE_API_KEY,
+					PushUtils.getMetaValue(activity, "api_key"));
+			// Push: 如果想基于地理位置推送，可以打开支持地理位置的推送的开关
+			// PushManager.enableLbs(getApplicationContext());
+		}
+
 	}
 }
