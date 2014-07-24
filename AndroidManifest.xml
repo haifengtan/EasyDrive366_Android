@@ -85,7 +85,7 @@
             android:name="cn.count.easydrive366.WelcomeActivity"
             android:label="@string/app_name" >
         </activity>
-        <activity android:name="cn.count.easydrive366.InformationActivity" >
+        <activity android:name="cn.count.easydrive366.InformationActivity"  android:exported="true" >
         </activity>
         <activity android:name="cn.count.easydrive366.HelpCallActivity" >
         </activity>

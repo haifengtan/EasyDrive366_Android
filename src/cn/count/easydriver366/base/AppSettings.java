@@ -391,8 +391,8 @@ public static String readInputStream(InputStream stream) throws IOException,Unsu
 	 * @param context
 	 */
 	static public void sendPushInfo(Context context){
+		System.out.println("推送到服务器");
 		if (isLogin) {
-			System.out.println("发送到服务器");
 			new Thread(new Runnable() {
 				@Override
 				public void run() {
@@ -408,9 +408,6 @@ public static String readInputStream(InputStream stream) throws IOException,Unsu
 	 */
 	static public void initBaiduPush(Context context,Activity activity) {
 		// Push: 以apikey的方式登录，一般放在主Activity的onCreate中。
-		// 这里把apikey存放于manifest文件中，只是一种存放方式，
-		// 您可以用自定义常量等其它方式实现，来替换参数中的Utils.getMetaValue(PushDemoActivity.this,
-		// "api_key")
 		// 通过share preference实现的绑定标志开关，如果已经成功绑定，就取消这次绑定
 		if (!PushUtils.hasBind(context)) {
 			PushManager.startWork(context,

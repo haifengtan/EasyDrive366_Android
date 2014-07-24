@@ -62,8 +62,7 @@ public class MyPushMessageReceiver extends FrontiaPushMessageReceiver {
 		 String responseString = "onBind errorCode=" + errorCode + " appid="
 		 + appid + " userId=" + userId + " channelId=" + channelId
 		 + " requestId=" + requestId;
-		 Log.d(TAG, responseString);
-		 System.out.println("绑定结果:="+responseString);
+		 System.err.println("绑定信息="+responseString);
 		// 绑定成功，存储绑定信息，设置已绑定flag，可以有效的减少不必要的绑定请求
 		if (errorCode == 0) {
 			PushUtils.setBind(context, true);
